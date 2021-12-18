@@ -40,7 +40,7 @@ int huffman_compress::binary_to_decimal(string in) {
 	dn-1 ... d3 d2 d1 d0
 	The decimal number is equal to the sum of binary digits (dn) times their power of 2 (2n):
 
-	decimal = d0×2^0 + d1×2^1 + d2×2^2 + ...
+	decimal = d0Ã—2^0 + d1Ã—2^1 + d2Ã—2^2 + ...
 	*/
 	int result = 0;
 	for (int i = 0; i < in.size(); i++) {
@@ -62,7 +62,7 @@ huffman_compress::huffman_compress(string in, string out):huffman(in,out)
 gets freq of each character in file and set the freq of character node to it
 then add the nodes of character that exists in the file to priority queue
 
-if any character of 182 character in the Ascii Table does not exists in the file
+if any character of 128 character in the Ascii Table does not exists in the file
 then its character nodes will not added to priority queue
 */
 void huffman_compress::build_priority_queue()
@@ -107,9 +107,9 @@ void huffman_compress::build_priority_queue()
 }
 
 /*
-create the huffman tree with highest frequecy characher being leaf
-the most frequency character will be near to root (smallest depth) (small huffman code)
-the least frequency character will be far from root (largest depth) (small huffman code)
+build the huffman tree ,making characters nodes as leafs
+the most frequency character will be leaf node near to root (smallest depth) (small huffman code)
+the least frequency character will be leaf node far from root (largest depth) (big huffman code)
 */
 void huffman_compress::build_huffman_tree()
 {

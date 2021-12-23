@@ -12,6 +12,7 @@ The project is an XML Editor with different operations on XML files.
 2. [Background](#Background)
 3. [Technologies](#Technologies)
 4. [Features](#Features)
+5. [Demo](#Demo)
 
 
 ## Abstract
@@ -36,3 +37,6 @@ C++ with QT5 framework
 -  Converting XML File to JSON File
 -  Compressing XML/JSON File
 -   Decompressing XML/JSON File
+
+## Demo
+first milestone demo: https://youtu.be/Lpa9nEyUgkc

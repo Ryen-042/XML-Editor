@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>inputFile</class>
+ <widget class="QWidget" name="inputFile">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>555</width>
+    <height>270</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="openFile">
+         <property name="text">
+          <string>Open here</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../recource.qrc">
+           <normaloff>:/icons/open.png</normaloff>:/icons/open.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="correct">
+         <property name="text">
+          <string>Correct</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../recource.qrc">
+           <normaloff>:/icons/Solve problem.png</normaloff>:/icons/Solve problem.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="minifing">
+         <property name="text">
+          <string>Minifinig</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../recource.qrc">
+           <normaloff>:/icons/minify.jpg</normaloff>:/icons/minify.jpg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="formatter">
+         <property name="text">
+          <string>Formatter</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../recource.qrc">
+           <normaloff>:/icons/XML.png</normaloff>:/icons/XML.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="convertToJSON">
+         <property name="text">
+          <string>Convert to JSON</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../recource.qrc">
+           <normaloff>:/icons/json.png</normaloff>:/icons/json.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="compress">
+         <property name="text">
+          <string>compress</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../recource.qrc">
+           <normaloff>:/icons/compression.png</normaloff>:/icons/compression.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="input_TextEdit">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../recource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

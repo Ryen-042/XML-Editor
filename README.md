@@ -39,4 +39,4 @@ C++ with QT5 framework
 -   Decompressing XML/JSON File
 
 ## Demo
-first milestone Demo: https://youtu.be/Lpa9nEyUgkc
+first milestone demo: https://youtu.be/Lpa9nEyUgkc

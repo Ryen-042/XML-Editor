@@ -397,6 +397,32 @@ string Tree::convert_to_json()
 
 // ******************************************************************
 
+vector<User> Tree::extractUsers()
+{
+    vector<User> users;
+    int num_of_users = root->children.size();
+    for(size_t i = 0; i < num_of_users; i++)
+    {
+        User user;
+        XMLNode* userNode = root->children[i];
+        for(int j = 0;j<userNode->children.size();j++){
+            XMLNode* user_data = userNode->children[j];
+            if(user_data->name == "name")
+                user.name = user_data->value;
+            else if(user_data->name == "id")
+                user.id = stoi(user_data->value);
+            else if(user_data->name == "followers"){
+                for(int k=0;k<user_data->children.size();k++){
+                    int id = stoi(user_data->children[k]->children[0]->value);
+                    user.followers.push_back(id);
+                }
+            }
+        }
+        users.push_back(user);
+    }
+    return users;
+}
+
 Tree::~Tree()
 {
     delete root;

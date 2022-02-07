@@ -2,6 +2,7 @@
 #define TREE_H
 
 #include "Node.hpp"
+#include "User.hpp"
 
 /*
  * used to bulid a tree of XML XMLNodes
@@ -126,6 +127,15 @@ public:
      */
 
     string convert_to_json();
+
+
+    /*
+     * Method to extract all user informaion
+     * as a vector
+     *
+     * @output users: a Vector of all users informaion
+     */
+    vector<User> extractUsers();
 
     // destructor for the tree which call
     // destructor for XMLNode class

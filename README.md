@@ -24,10 +24,11 @@ This XML editor allows user to load, highlight, edit, save XML files and many ot
 User can search in XML and many features to deal with text.
 XML editor can detect errors, show the number of errors, point to places of errors,and fix them to make the XML file consistent.
 Also, user can format XML file, minify it, convert it into JSON file and vice versa, compress it to reduce its size
-,and able to decompress it.
+,and able to decompress it,user can generate graph visulization for social network xml data, and get some important analysis from it.
 
 ## Technologies
-C++ with QT5 framework
+- C++ with QT5 framework
+- GraphViz
 
 ## Features
 -  Browsing XML Files
@@ -36,7 +37,10 @@ C++ with QT5 framework
 -  Minifying (Reducing file size by removing extra spaces).
 -  Converting XML File to JSON File
 -  Compressing XML/JSON File
--   Decompressing XML/JSON File
+-  Decompressing XML/JSON File
+-  Graph Visulization 
+-  Social Network Analysis
 
 ## Demo
-first milestone demo: https://youtu.be/Lpa9nEyUgkc
+- first milestone demo: https://youtu.be/Lpa9nEyUgkc
+- second milestone demo: https://youtu.be/E4ov2o4-1TI

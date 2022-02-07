@@ -35,6 +35,14 @@ private slots:
 
     void on_tabWidget_tabCloseRequested(int index);
 
+    void on_actionTotorial_triggered();
+
+    void on_actionContact_Us_triggered();
+
+    void on_actionhelp_triggered();
+
+    void on_actionGitHub_repo_triggered();
+
 private:
 
     void create_tab(QString type = "");

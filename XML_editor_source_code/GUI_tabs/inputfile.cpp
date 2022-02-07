@@ -6,8 +6,8 @@
 #include "minifing.h"
 #include "compress.h"
 #include "correct.h"
+#include "graph_visualize.h"
 
-#include <QDebug>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QTextStream>
@@ -44,14 +44,13 @@ void inputFile::on_openFile_clicked()
 
 void inputFile::create_new_tab(QString type){
     if(ui->input_TextEdit->toPlainText()==""){
-               QMessageBox::critical(this,"error","please open a XML file first 😡");
+               QMessageBox::critical(this,"error","please open a XML file first");
                     return;
         }
     if(!valid_xml){
-               QMessageBox::critical(this,"error","please correct XML file first 😤");
+               QMessageBox::critical(this,"error","please correct XML file first");
                     return;
         }
-
     QWidget * new_tab = nullptr;
     if(type == "Minifing")
     {
@@ -64,6 +63,8 @@ void inputFile::create_new_tab(QString type){
     else if (type == "JSON")
     {
         new_tab = new Convert_to_JSON(nullptr , ui->input_TextEdit->toPlainText());
+    }else if(type == "Graph"){
+        new_tab = new graph_visualize(nullptr , ui->input_TextEdit->toPlainText());
     }
 
    tabWidget->addTab(new_tab,type);
@@ -74,7 +75,7 @@ void inputFile::create_new_tab(QString type){
 void inputFile::on_correct_clicked()
 {
     if(ui->input_TextEdit->toPlainText()==""){
-               QMessageBox::critical(this,"error","please open a XML file first 😡");
+               QMessageBox::critical(this,"error","please open a XML file first");
                     return;
         }
 
@@ -83,7 +84,7 @@ void inputFile::on_correct_clicked()
     if(!valid_xml)
         new_correct->show();
     else{
-        QMessageBox::information(this,"XML File","Correct XML File 😀");
+        QMessageBox::information(this,"XML File","Correct XML File");
         delete new_correct;
     }
 }
@@ -107,6 +108,14 @@ void inputFile::on_convertToJSON_clicked()
 
 void inputFile::on_compress_clicked()
 {
+    if(ui->input_TextEdit->toPlainText()==""){
+               QMessageBox::critical(this,"error","please open a XML file first");
+                    return;
+        }
+    if(!valid_xml){
+               QMessageBox::critical(this,"error","please correct XML file first");
+                    return;
+        }
     compress* new_tab = new compress(nullptr,file_path_);
     tabWidget->addTab(new_tab,"Compress");
     tabWidget ->setCurrentIndex(tabWidget->count()-1);
@@ -114,9 +123,27 @@ void inputFile::on_compress_clicked()
 }
 
 
+void inputFile::on_visualize_clicked()
+{
+    create_new_tab("Graph");
+}
+
+void inputFile::on_pushButton_clicked()
+{
+
+}
+
+
+void inputFile::on_pushButton_2_clicked()
+{
+
+}
 inputFile::~inputFile()
 {
     delete ui;
 }
+
+
+
 
 

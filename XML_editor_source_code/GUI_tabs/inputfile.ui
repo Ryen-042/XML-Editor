@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>555</width>
+    <width>647</width>
     <height>270</height>
    </rect>
   </property>
@@ -81,6 +81,17 @@
          <property name="icon">
           <iconset resource="../recource.qrc">
            <normaloff>:/icons/compression.png</normaloff>:/icons/compression.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="visualize">
+         <property name="text">
+          <string>Visualize</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../recource.qrc">
+           <normaloff>:/icons/visualize.png</normaloff>:/icons/visualize.png</iconset>
          </property>
         </widget>
        </item>

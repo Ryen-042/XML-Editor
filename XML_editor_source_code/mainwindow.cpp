@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QFile>
+#include <QDesktopServices>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -84,10 +85,10 @@ void MainWindow::on_actionAbout_Us_triggered()
                          "\t  2) Minifing\n"
                          "\t  3) Formatter\n"
                          "\t  4) Convert to JSON\n"
-                         "\t  3) Compress\n";
+                         "\t  5) Compress\n"
+                         "\t  5) Compress\n";
 
 
-    about_text += "Date   : 12/12/2021\n";
     about_text += "(C) XML_Editor  (R)\n";
 
     QMessageBox::about(this,"About Notepad",about_text);
@@ -104,10 +105,40 @@ void MainWindow::on_tabWidget_tabCloseRequested(int index)
         ui->tabWidget->removeTab(index);
 }
 
+
+void MainWindow::on_actionTotorial_triggered()
+{
+    QString link = "https://www.youtube.com/watch?v=Lpa9nEyUgkc";
+    QDesktopServices::openUrl(QUrl(link));
+}
+
+
+void MainWindow::on_actionContact_Us_triggered()
+{
+    QDesktopServices::openUrl(QUrl("mailto:?to=AbdelrhmanhAbdelaziz@gmail.com&subject=XML_Editor problem&body=Dear Supporter i want to inform you about:\n", QUrl::TolerantMode));
+}
+
+
+void MainWindow::on_actionhelp_triggered()
+{
+    QString link = "https://drive.google.com/file/d/1gXOVkd-20v0N_jLmbr2mga1lkTNd3nt-/view?usp=sharing";
+    QDesktopServices::openUrl(QUrl(link));
+
+}
+
+
+void MainWindow::on_actionGitHub_repo_triggered()
+{
+    QString link = "https://github.com/Ryen-042/XML-Editor";
+    QDesktopServices::openUrl(QUrl(link));
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+
 
 
 

@@ -19,5 +19,7 @@
         <file>icons/contact-us.png</file>
         <file>icons/help.png</file>
         <file>icons/Save.ico</file>
+        <file>icons/visualize.png</file>
+        <file>icons/github-logo.png</file>
     </qresource>
 </RCC>

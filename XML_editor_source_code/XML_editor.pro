@@ -20,8 +20,10 @@ SOURCES += \
     GUI_tabs/convert_to_json.cpp \
     GUI_tabs/correct.cpp \
     GUI_tabs/formatter.cpp \
+    GUI_tabs/graph_visualize.cpp \
     GUI_tabs/inputfile.cpp \
     GUI_tabs/minifing.cpp \
+    Graph/Graph.cpp \
     Minify/Minify.cpp \
     Syntax_Highlight/jshighlighter.cpp \
     Syntax_Highlight/xmlsyntaxhighlighter.cpp \
@@ -42,12 +44,15 @@ HEADERS += \
     GUI_tabs/convert_to_json.h \
     GUI_tabs/correct.h \
     GUI_tabs/formatter.h \
+    GUI_tabs/graph_visualize.h \
     GUI_tabs/inputfile.h \
     GUI_tabs/minifing.h \
+    Graph/Graph.hpp \
     Minify/Minify.h \
     Syntax_Highlight/jshighlighter.h \
     Syntax_Highlight/xmlsyntaxhighlighter.h \
     XML_to_JSON/Node.hpp \
+    XML_to_JSON/User.hpp \
     XML_to_JSON/tree.hpp \
     mainwindow.h
 
@@ -56,6 +61,7 @@ FORMS += \
     GUI_tabs/convert_to_json.ui \
     GUI_tabs/correct.ui \
     GUI_tabs/formatter.ui \
+    GUI_tabs/graph_visualize.ui \
     GUI_tabs/inputfile.ui \
     GUI_tabs/minifing.ui \
     mainwindow.ui
@@ -68,4 +74,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     recource.qrc
 RC_ICONS = XML_edior.ico
+
+DISTFILES +=
 

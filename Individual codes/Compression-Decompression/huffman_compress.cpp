@@ -1,10 +1,11 @@
 #include "huffman_compress.h"
 
-/*
-this auxiliary function used by calculate_huffman_codes() function
-traverse the huffman tree and get huffman code for a character
-save the huffman code in code data member of node of every character
-*/
+/**
+	 * @brief this auxiliary function used by calculate_huffman_codes() function
+		traverse the huffman tree and get huffman code for a character
+		save the huffman code in code data member of node of every character
+	 * 
+	 */
 void huffman_compress::traverse(node_ptr node, string code)
 {
 	/*
@@ -31,9 +32,10 @@ void huffman_compress::traverse(node_ptr node, string code)
 	}
 }
 
-/*
-convert a binary code(8 bits)(represented as string of 0 and 1 ) to a decimal integer
-*/
+/**
+	 * @brief convert a binary code(8 bits)(represented as string of 0 and 1 ) to a decimal integer
+	 * 
+	 */
 int huffman_compress::binary_to_decimal(string in) {
 	/*
 	For binary number with n digits:
@@ -53,18 +55,22 @@ int huffman_compress::binary_to_decimal(string in) {
 	return result;
 }
 
-//constructor to initalize the original file and Ecodeded file
+/**
+	 * @brief constructor to initalize the original file and Ecodeded file
+	 * 
+	 */
 huffman_compress::huffman_compress(string in, string out):huffman(in,out)
 {
 }
 
-/*
-gets freq of each character in file and set the freq of character node to it
-then add the nodes of character that exists in the file to priority queue
+/**
+	 * @brief gets freq of each character in file and set the freq of character node to it
+		then add the nodes of character that exists in the file to priority queue
 
-if any character of 128 character in the Ascii Table does not exists in the file
-then its character nodes will not added to priority queue
-*/
+		if any character of 128 character in the Ascii Table does not exists in the file
+		then its character nodes will not added to priority queue
+	 * 
+	 */
 void huffman_compress::build_priority_queue()
 {
 
@@ -106,11 +112,11 @@ void huffman_compress::build_priority_queue()
 	}
 }
 
-/*
-build the huffman tree ,making characters nodes as leafs
-the most frequency character will be leaf node near to root (smallest depth) (small huffman code)
-the least frequency character will be leaf node far from root (largest depth) (big huffman code)
-*/
+/**
+	 * @brief	create the huffman tree with highest frequecy characher being leaf
+		the most frequency character will be near to root (smallest depth) (small huffman code)
+		the least frequency character will be far from root (largest depth) (small huffman code)
+	*/
 void huffman_compress::build_huffman_tree()
 {
 	/*
@@ -149,19 +155,19 @@ void huffman_compress::build_huffman_tree()
 	}
 }
 
-/*
-traverse the huffman tree and get huffman code for a character
-save the huffman code in code data member of node of every character
+/**
+ * @brief traverse the huffman tree and get huffman code for a character
+	save the huffman code in code data member of node of every character
 */
 void huffman_compress::calculate_huffman_codes()
 {
 	traverse(root, "");
 }
 
-/*
-creating the Encoded File (Compressed File) that will consist of 2 main parts
-header: priority queue size - huffman codes for Every Character in file
-data: compressed data(replacement of every character in file to its huffman code)
+/**
+* @brief creating the Encoded File (Compressed File) that will consist of 2 main parts
+	header: priority queue size - huffman codes for Every Character in file
+	data: compressed data(replacement of every character in file to its huffman code)
 */
 void huffman_compress::compression_saving_to_compressed_file()
 {
@@ -271,7 +277,10 @@ void huffman_compress::compression_saving_to_compressed_file()
 	out_file.close();
 }
 
-//user interface for all steps for comprssing operation
+/**
+ * @brief user interface for all steps for comprssing operation
+ * 
+ */
 void huffman_compress::compress_file()
 {
 	this->build_priority_queue();

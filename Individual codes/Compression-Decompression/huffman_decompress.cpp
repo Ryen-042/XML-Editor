@@ -1,8 +1,9 @@
 #include "huffman_decompress.h"
 
-/*
-convert from decimal integer to binary as representation of string of '0','1'
-*/
+/**
+ * @brief convert from decimal integer to binary as representation of string of '0','1'
+ * 
+ */
 string huffman_decompress::decimal_to_binary(int in) {
 	/*
 	Conversion steps:
@@ -38,10 +39,10 @@ string huffman_decompress::decimal_to_binary(int in) {
 	return result;
 }
 
-/*
-building the huffman tree by passing the huffmanCode + character ( build part of tree (path to specific character) )
-[for every character node were existed in priority queue in Compression]
-*/
+/**
+ * @brief building the huffman tree by passing the huffmanCode + character [for every character node were existed in priority queue in Compression]
+ * 
+ */
 void huffman_decompress::build_tree_paths(string& huffman_code, char character)
 {
 
@@ -81,15 +82,19 @@ void huffman_decompress::build_tree_paths(string& huffman_code, char character)
 	current->id = character;		//set id of character node of huffman tree to character		
 }
 
-//constructor to initalize the Encodeded file and Decoded file 
+/**
+ * @brief constructor to initalize the Encodeded file and Decoded file 
+ * 
+ */
 huffman_decompress::huffman_decompress(string in ,string out):huffman(in,out)
 {
 }
 
 
-/*
-	reading the compressed file and read the header part to acess character + its huffman code
+/**
+ * @brief reading the compressed file and read the header part to acess character + its huffman code
 	with these we can re construct the huffman tree
+* 
 */
 void huffman_decompress::rebuild_huffman_tree()
 {
@@ -160,9 +165,10 @@ void huffman_decompress::rebuild_huffman_tree()
 	in_file.close();
 }
 
-/*
-reading the compressed file from the part of data (after header)
-decoding this encoded data to original data and save it in the decoded file
+/**
+ * @brief reading the compressed file from the part of data (after header)
+	decoding this encoded data to original data and save it in the decoded file
+* 
 */
 void huffman_decompress::decompression_saving_to_decompressed_file()
 {
@@ -202,7 +208,7 @@ void huffman_decompress::decompression_saving_to_decompressed_file()
 	/*
 	jump to the last one byte to get the number of '0' append to the string at last
 	as we appended sprcific number of zeros to the last few bits to complete them into 8 bits
-	we use ios::end (offset from the end of the stream’s buffer).
+	we use ios::end (offset from the end of the streamï¿½s buffer).
 	*/
 	in_file.seekg(-1, ios::end);
 	char count0;
@@ -211,7 +217,7 @@ void huffman_decompress::decompression_saving_to_decompressed_file()
 	/*
 	jump to the position where the data of file starts
 	jump after header of file- header contain size of prority queue + character,huffman code for character
-	we use ios_base::beg (offset from the beginning of the stream’s buffer).
+	we use ios_base::beg (offset from the beginning of the streamï¿½s buffer).
 
 	//1 byte for size of prority queue
 	//for every character it take --> 1 byte for character ascii
@@ -278,7 +284,10 @@ void huffman_decompress::decompression_saving_to_decompressed_file()
 	out_file.close();
 }
 
-//user interface for all steps for decomprssing operation
+/**
+ * @brief user interface for all steps for decomprssing operation
+ * 
+ */
 void huffman_decompress::decompress_file()
 {
 	this->rebuild_huffman_tree();

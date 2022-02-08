@@ -1,0 +1,5 @@
+<map id="huffman_compress" name="huffman_compress">
+<area shape="rect" id="node1" title="class will be used in compression" alt="" coords="5,188,152,215"/>
+<area shape="rect" id="node2" href="$classhuffman.html" title="parent class for classes used in compression &amp; deccompression" alt="" coords="41,112,117,139"/>
+<area shape="rect" id="node3" href="$structhuffman__node.html" title="node used to build huffman tree" alt="" coords="21,7,136,33"/>
+</map>

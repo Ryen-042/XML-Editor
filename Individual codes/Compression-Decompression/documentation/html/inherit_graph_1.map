@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classhuffman.html" title="parent class for classes used in compression &amp; deccompression" alt="" coords="5,31,81,57"/>
+<area shape="rect" id="node2" href="$classhuffman__compress.html" title="class will be used in compression" alt="" coords="137,5,284,32"/>
+<area shape="rect" id="node3" href="$classhuffman__decompress.html" title="class will be used in decompression" alt="" coords="129,56,292,83"/>
+</map>
